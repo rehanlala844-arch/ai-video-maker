@@ -203,7 +203,7 @@ async function generateVideo() {
 
       body: JSON.stringify({
         prompt: finalPrompt,
-        ratio: format === "9:16" ? "720:1280" : "1280:720",
+        ratio: format === "9:16" ? "768:1280" : "1280:768",
         duration: 5
       })
     });
