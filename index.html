@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My AI Video Maker</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1020;
+      color: white;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      padding: 30px 18px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #aeb7c7;
+      margin-bottom: 30px;
+    }
+
+    .box {
+      background: #151c2e;
+      padding: 20px;
+      border-radius: 18px;
+      border: 1px solid #29334a;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 8px;
+      font-size: 16px;
+    }
+
+    textarea,
+    select {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid #39445c;
+      background: #0d1424;
+      color: white;
+      font-size: 16px;
+    }
+
+    textarea {
+      height: 150px;
+      resize: vertical;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 22px;
+      padding: 15px;
+      border: 0;
+      border-radius: 12px;
+      background: #6c5ce7;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    #message {
+      text-align: center;
+      margin-top: 20px;
+      color: #b9c2d4;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>🎬 My AI Video Maker</h1>
+
+    <div class="subtitle">
+      اپنی کہانی لکھیں اور AI ویڈیو بنائیں
+    </div>
+
+    <div class="box">
+
+      <label>📝 اپنی کہانی لکھیں</label>
+
+      <textarea id="prompt"
+        placeholder="مثلاً: ایک گاؤں میں ایک بچہ اپنی امی ابو کا فرمانبردار تھا..."></textarea>
+
+      <label>🗣️ زبان</label>
+
+      <select id="language">
+        <option>اردو</option>
+        <option>Hindi</option>
+        <option>English</option>
+      </select>
+
+      <label>🎨 ویڈیو Style</label>
+
+      <select id="style">
+        <option>3D Cartoon</option>
+        <option>Realistic</option>
+        <option>Anime</option>
+        <option>Cinematic</option>
+      </select>
+
+      <label>📱 ویڈیو Format</label>
+
+      <select id="format">
+        <option>9:16 - YouTube Shorts</option>
+        <option>16:9 - YouTube</option>
+        <option>1:1 - Square</option>
+      </select>
+
+      <button onclick="generateVideo()">
+        🎬 Generate Video
+      </button>
+
+      <div id="message"></div>
+
+    </div>
+
+  </div>
+
+  <script>
+    function generateVideo() {
+
+      const prompt = document.getElementById("prompt").value;
+
+      if (prompt.trim() === "") {
+        document.getElementById("message").innerText =
+          "⚠️ پہلے اپنی کہانی لکھیں۔";
+        return;
+      }
+
+      document.getElementById("message").innerText =
+        "⏳ بہت جلد یہاں AI ویڈیو بننا شروع ہوگی...";
+    }
+  </script>
+
+</body>
+</html>
